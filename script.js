@@ -2,6 +2,14 @@
 fetch(https://raw.githubusercontent.com/Ashanaa19/Amtuls-Projects/main/Table_Input.csv)
   .then(response => response.text())
   .then(data => {
+    var parsedData = parseCSVData(data);
+
+    // Check the parsed data
+    console.log(parsedData);
+  })
+  .catch(error => {
+    console.error('Error reading CSV file:', error);
+  });
     // Process the CSV data
     var csvRows = data.split('\n');
 
